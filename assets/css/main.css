@@ -1,0 +1,140 @@
+/**************************
+* Common Code
+**************************/
+*{
+	font-family:'Oswald', sans-serif;
+	box-sizing:border-box;
+}
+body,html{
+	margin:0;
+	padding:0;
+	width:100%;
+}
+a:link {
+    color: #dddddd;
+	margin-top: 5px;
+	margin-left: 15px;
+	font-family:'Oswald', sans-serif;
+	font-size: 20px;
+	opacity: 0.7;
+}
+/* visited link */
+a:visited {
+    color: #dddddd;
+	text-decoration: none;
+}
+/* mouse over link */
+a:hover {
+    color: #dddddd;
+	text-decoration: none;
+}
+ul {
+	margin-top:5px;
+	list-style-type: none;
+	font-size: 19px;
+	margin-left: -35px;
+}
+.col-centered{
+	display:inline-block;
+    float:none;
+}
+/**************************
+* Logo
+**************************/
+#logo{
+	width:100%;
+	margin-top: 100px;
+}
+/**************************
+* FAQ Section
+*************************/
+
+.FAQBox{
+	width: 250px;
+	height: 300px;
+	border-width: 0px 2px 0px 0px;
+	border-style:solid;
+	margin: 10px;
+	text-align: center;
+}
+.FAQquestion{
+	text-align: left;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	width: 250px;
+	height: 80px;
+	opacity: 0.9;
+	font-size: 30px;
+	font-family: 'Lobster', cursive;
+}
+.FAQanswer{
+	text-align: left;
+	width: 220px;
+	height: 170px;
+	font-size: 20px;
+	font-family: 'Lobster', cursive;
+	opacity: 0.7;
+	overflow-y: auto;
+}
+/**************************
+* Events Section
+**************************/
+.section-header{
+	margin-top: 20px;
+	font-family: 'Lobster', cursive;
+	font-size: 55px;
+	border-bottom: 3px solid;
+}
+.eventsList{
+	position: relative;
+	left: 0px;
+	height: 45px;
+	font-family: 'Lobster', cursive;
+	font-size: 25px;
+	border-bottom: 1px solid;
+}
+#eventsListContainer{
+	height: 250px;
+	overflow-y: auto;
+}
+#eventsDescriptionContainer{
+	margin-left: 15px;
+	height: 250px;
+	border-left: 2px solid;
+	overflow-y: auto;
+}
+.commonDescriptionDesign{
+	margin-top: 5px;
+	margin-left: 15px;
+	font-family:'Oswald', sans-serif;
+	font-size: 20px;
+	opacity: 0.7;
+}
+#title{
+	margin-left: 15px;
+	font-family: 'Lobster', cursive;
+	font-size: 30px;
+	border-bottom: 1px solid;
+}
+#description{
+	margin-top: 5px;
+	margin-left: 15px;
+	font-family:'Oswald', sans-serif;
+	font-size: 20px;
+	font-weight: 600px;
+}
+/**************************
+* Footer Section
+**************************/
+#pageFooter{
+	min-height: 200px;
+	margin-top: 40px;
+	background-color: black;
+
+}
+.contentFooter{
+	margin-top: 10px;
+	color: #fff;
+	font-family: 'Lobster', cursive;
+	font-size: 25px;
+}
