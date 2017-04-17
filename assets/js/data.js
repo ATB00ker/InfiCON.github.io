@@ -24,8 +24,21 @@ FAQ[0] = {question:"(Sample)What is this section?", answer:"This is a FAQ sectio
 FAQ[1] = {question:"(Sample)", answer:"This is a FAQ section to be use as a About us! This is text! Test Text!This is a FAQ section to be use as a About us! This is text! Test Text!This is a FAQ section to be use as a About us! This is text! Test Text!"};
 FAQ[2] = {question:"(Sample)What is this section?", answer:"This is a FAQ section to be use as a About us!"};
 FAQ[3] = {question:"(Sample)What is this section?", answer:"This is a FAQ section to be use as a About us!"};
+/**Checking the boxes in Row to avoid making border line at the end of the last box of the row**/
+var boxInRow = Math.floor(($(window).width()/275)-1);
+var flag=0;
 for (var x in FAQ){
-	var html = '<div class="col-centered col-xs-4 FAQBox"><div class="FAQquestion">'+FAQ[x].question+'</div><div class="FAQanswer">'+FAQ[x].answer+'</div></div>';
+	if((FAQ.length)-1 == x){
+	var html = '<div class="col-centered col-xs-4 FAQBox">';
+	}
+	else if(flag == boxInRow){
+	var html = '<div class="col-centered col-xs-4 FAQBox">';
+	flag=-1;	
+	}
+	else{
+	var html = '<div class="col-centered col-xs-4 FAQBox FAQBoxBorder">';}
+	flag++;
+	html += '<div class="FAQquestion">'+FAQ[x].question+'</div><div class="FAQanswer">'+FAQ[x].answer+'</div></div>';
 	FAQListContainer.append(html);
 }
 /**************************
@@ -41,7 +54,7 @@ for (var x in FAQ){
 		cta:"Enter Event eventLocation google map link Here",
 		description:"Enter Event Description Here"};
 **************************/
-events[0] = {title:"Sample Title 1", description:"This is Sample Content! I Should be studing currently! I'll definatly start from tommorrow!Sample!Sample!Sample!Sample!Sample!Sample! Sample!Sample!Sample! Sample!Sample!Sample!Sample!Sample!Sample!", eventLocation:"This Location", date:"C", time:"D", speaker:"Full Name", cta:"https://goo.gl/maps/g7jWu5ehByH2"};
+events[0] = {title:"Sample Title 1", description:"This is Sample Content! I Should be studing currently! I'll definatly start from tommorrow! Sample!Sample!Sample! Sample!Sample!Sample!  Sample!Sample!Sample! Sample!Sample!Sample! Sample!Sample!Sample!", eventLocation:"This Location", date:"C", time:"D", speaker:"Full Name", cta:"https://goo.gl/maps/g7jWu5ehByH2"};
 events[1] = {title:"Sample Title 2", description:"A", eventLocation:"B", date:"C", time:"D", speaker:"E", cta:"F"};
 events[2] = {title:"Sample Title 3", description:"A", eventLocation:"B", date:"C", time:"D", speaker:"E", cta:"F"};
 events[3] = {title:"Sample Title 4", description:"A", eventLocation:"B", date:"C", time:"D", speaker:"E", cta:"F"};
