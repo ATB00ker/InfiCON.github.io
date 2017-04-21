@@ -12,23 +12,33 @@ var dateContainer = $("#date");
 var descriptionContainer = $("#description");
 var speakerContainer = $("#speaker");
 var ctaContainer = $("#cta");
+var boxInRow;
 /**************************
 * FAQ Section
 ***************************
 *Append Format: 
-	FAQ[X] = {
-		question:"Enter Question Here",
-		answer:"Enter Answer Here"};
+	FAQ[X] = {question:"",answer:""};
+		question:Enter FAQ Question
+		answer:Enter FAQ Answer
 **************************/
-FAQ[0] = {question:"(Sample)What is this section?", answer:"This is a FAQ section to be use as a About us! This is text! Test Text!This is a FAQ section to be use as a About us! This is text! Test Text!This is a FAQ section to be use as a About us! This is text! Test Text!"};
-FAQ[1] = {question:"(Sample)", answer:"This is a FAQ section to be use as a About us! This is text! Test Text!This is a FAQ section to be use as a About us! This is text! Test Text!This is a FAQ section to be use as a About us! This is text! Test Text!"};
-FAQ[2] = {question:"(Sample)What is this section?", answer:"This is a FAQ section to be use as a About us!"};
+FAQ[0] = {question:"What is InfiCON?", answer:"InfiCON is  ..."};
+FAQ[1] = {question:"(Sample)What is this section?", answer:"This is a FAQ section to be use as a About us! This is text! Test Text!This is a FAQ section to be use as a About us! This is text! Test Text!This is a FAQ section to be use as a About us! This is text! Test Text!"};
+FAQ[2] = {question:"(Sample)", answer:"This is a FAQ section to be use as a About us! This is text! Test Text!This is a FAQ section to be use as a About us! This is text! Test Text!This is a FAQ section to be use as a About us! This is text! Test Text!"};
 FAQ[3] = {question:"(Sample)What is this section?", answer:"This is a FAQ section to be use as a About us!"};
+FAQ[4] = {question:"(Sample)What is this section?", answer:"This is a FAQ section to be use as a About us!"};
 /**Checking the boxes in Row to avoid making border line at the end of the last box of the row**/
-var boxInRow = Math.floor(($(window).width()/275)-1);
+Refresh();
+function Refresh(){
+FAQListContainer.empty(html);
+boxInRow = Math.floor(($(window).width()/275)-1);
 var flag=0;
-for (var x in FAQ){
-	if((FAQ.length)-1 == x){
+console.log(boxInRow);
+	for (var x in FAQ){
+	if(boxInRow<=0){
+		console.log("Flash");
+	var html = '<div class="col-centered col-xs-4 FAQBox" style="border-width: 0px 2px 0px 2px;border-style: solid;">';
+	}
+	else if((FAQ.length)-1 == x){
 	var html = '<div class="col-centered col-xs-4 FAQBox">';
 	}
 	else if(flag == boxInRow){
@@ -36,23 +46,30 @@ for (var x in FAQ){
 	flag=-1;	
 	}
 	else{
-	var html = '<div class="col-centered col-xs-4 FAQBox FAQBoxBorder">';}
+	var html = '<div class="col-centered col-xs-4 FAQBox" style="border-width: 0px 2px 0px 0px;border-style: solid;">';}
 	flag++;
 	html += '<div class="FAQquestion">'+FAQ[x].question+'</div><div class="FAQanswer">'+FAQ[x].answer+'</div></div>';
 	FAQListContainer.append(html);
+	}
 }
+$(window).resize(function() {
+  //resize just happened, pixels changed
+	if(boxInRow!=Math.floor(($(window).width()/275)-1)){
+	Refresh();
+	}
+});
 /**************************
 * Events Section
 ***************************
 *Append Format: 
-	events[X] = {
-		title:"Enter Event title Here",
-		eventLocation:"Enter Event eventLocation Here",
-		date:"Enter Event date Here",
-		time:"Enter Event time Here",
-		speaker:"Enter Event speaker name Here",
-		cta:"Enter Event eventLocation google map link Here",
-		description:"Enter Event Description Here"};
+	events[X] = {title:"", eventLocation:"", date:"", time:"", speaker:"", cta:"", description:""};
+		title: Enter Event title
+		eventLocation: Enter Event eventLocation
+		date: Enter Event date
+		time: Enter Event time
+		speaker: Enter Event speaker name
+		cta: Enter Event eventLocation google map link
+		description: Enter Event Description
 **************************/
 events[0] = {title:"Sample Title 1", description:"This is Sample Content! I Should be studing currently! I'll definatly start from tommorrow! Sample!Sample!Sample! Sample!Sample!Sample!  Sample!Sample!Sample! Sample!Sample!Sample! Sample!Sample!Sample!", eventLocation:"This Location", date:"C", time:"D", speaker:"Full Name", cta:"https://goo.gl/maps/g7jWu5ehByH2"};
 events[1] = {title:"Sample Title 2", description:"A", eventLocation:"B", date:"C", time:"D", speaker:"E", cta:"F"};
