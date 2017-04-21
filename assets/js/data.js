@@ -32,10 +32,8 @@ function Refresh(){
 FAQListContainer.empty(html);
 boxInRow = Math.floor(($(window).width()/275)-1);
 var flag=0;
-console.log(boxInRow);
 	for (var x in FAQ){
 	if(boxInRow<=0){
-		console.log("Flash");
 	var html = '<div class="col-centered col-xs-4 FAQBox" style="border-width: 0px 2px 0px 2px;border-style: solid;">';
 	}
 	else if((FAQ.length)-1 == x){
