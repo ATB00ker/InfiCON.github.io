@@ -95,3 +95,6 @@ function displayEventInformation(x){
 	ctaContainer.attr("href",events[x].cta);
 	ctaContainer.text(html);
 }
+//** Set Container Height **//
+var height = $("#particles-js .container").height()+20;
+$("#particles-js").css("height",height);

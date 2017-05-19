@@ -17,6 +17,12 @@ a:link{
 	display:inline-block;
     float:none;
 }
+.container{
+	position: absolute;
+    right:0;
+	left:0;
+	margin: auto;
+}
 /**************************
 * Logo
 **************************/
