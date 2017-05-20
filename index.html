@@ -15,60 +15,61 @@
 
     <title>InfiCON</title>
 
-     <!-- Site favicon -->
-     <link href="./assets/images/tempLogo.PNG" rel="shortcut icon">
-     <link href="./assets/images/tempLogo.PNG" rel="apple-touch-icon">
+    <!-- Site favicon -->
+    <link href="./assets/images/tempLogo.PNG" rel="shortcut icon">
+    <link href="./assets/images/tempLogo.PNG" rel="apple-touch-icon">
 
     <!-- Bootstrap Core CSS -->
     <link href="assets/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Oswald|Lobster|Patrick+Hand" rel="stylesheet">
-    <!-- Custom CSS -->
-    <link href="assets/css/main.css" rel="stylesheet" />
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
+	
+	<!-- Owl Styles -->
+	<link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+	
+	<!-- Font Awesome Styles -->
+	<script src="https://use.fontawesome.com/8fda296a12.js"></script>
+	
+	<!-- Materialize CSS -->
+    <link href="assets/css/materialize.min.css" rel="stylesheet" />
+	
+	<!-- Perfect Scroll CSS -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery.perfect-scrollbar/0.7.0/css/perfect-scrollbar.min.css" integrity="sha256-ANTwsT2Ffs0EVPyOuss4fxYnCxewzdZeahx93/uLWDM=" crossorigin="anonymous" />
+	
+	<!-- Custom CSS -->
+	<link href="assets/css/main.css" rel="stylesheet" />
 </head>
 <body>
-<section id="particles-js">
+<section>
+	<div class="container-fluid" id="particles-js">
+		<div id="logo">
+			<img src="./assets/images/tempLogo.PNG">
+			<i onclick="scrollToFAQ();" class="fa fa-angle-double-down" aria-hidden="true"></i>
+		</div>
+	</div>
 	<div class="container">
-		<div class="row text-center">
-			<div class="col-xs-12">
-				<div id="logo"><img src="./assets/images/tempLogo.PNG"></div>
-			</div>
+		<div class="card row">
+			<div id="FAQListContainer" class="card-content owl-carousel"></div>
 		</div>
-		<div class="row">
-			<div class="col-xs-12">
-				<div id="FAQListContainer" class="row-centered text-center"></div>
-			</div>
-		</div>
-		<div class="col-xs-12">
-			<div class="row text-left">
-				<h1 class="section-header">Upcoming Events</h1>
-			</div>
-			<div class="row">
+		<div class="card row">
+			<div id="eventsContainer">
+				<h4 class="section-header">Upcoming Events</h4>
 				<div class="col-sm-4" id="eventsListContainer">
-					<div id="eventsList"></div>			
+					<ul class="collection" id="eventsList"></ul>	
 				</div>
 				<div class="col-sm-7" id="eventsDescriptionContainer">
-					<div id="title"></div>
-					<div id="description"></div>
-					<div class="col-sm-6">
-						<div id="speaker" class="commonDescriptionDesign"></div>
-					</div>
-					<div class="col-sm-6 commonDescriptionDesign">
-						<a id="cta" href="#"></a>
-					</div>
-					<div class="col-sm-6">
-						<div id="date" class="commonDescriptionDesign"></div>
-					</div>
-					<div class="col-sm-6">
-						<div id="time" class="commonDescriptionDesign"></div>
+					<div class="col-xs-12">
+						<div id="description"></div>
+						<div class="col-xs-6">
+							<div id="speaker" class="commonDescriptionDesign"></div>
+						</div
+						<div class="col-xs-6">
+							<a id="cta" class="chip commonDescriptionDesign" href="#"></a>
+						</div>
+						<div class="col-xs-6">
+							<div id="date" class="commonDescriptionDesign"></div>
+						</div>
+						<div class="col-xs-6">
+							<div id="time" class="commonDescriptionDesign"></div>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -113,7 +114,14 @@
 	<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js" integrity="sha256-+u54FaX9J+k40eAcg5K2YzICSQjrEYBI9gju5nE3HfY=" crossorigin="anonymous"></script>
 	<script src="assets/js/particles.js"></script>
 
+	<!-- Owl JavaScript -->
+	<script src="assets/js/owl.carousel.min.js"></script>
+	
+	<!-- Perfect Scroll Scripts -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.perfect-scrollbar/0.7.0/js/perfect-scrollbar.jquery.js" integrity="sha256-rD9h8SsFg+wKuN49tpMVIx/k5NvQXC5IEeEFePSht9o=" crossorigin="anonymous"></script>
+	
 	<!-- Functionality Scripts -->
-	<script src="assets/js/data.js" defer></script>
+	<script src="assets/js/data.js"></script>
+	<script src="assets/js/functions.js"></script>
 </body>
 </html>
