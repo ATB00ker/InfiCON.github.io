@@ -11,7 +11,6 @@ function scrollToFAQ(){
 
 //** Owl Initiate **//
 $("#FAQListContainer").owlCarousel({
-	rtl:true,
 	center: true,
 	loop:true,
 	autoWidth: true,
@@ -19,18 +18,15 @@ $("#FAQListContainer").owlCarousel({
 	autoplayTimeout:2000,
 	autoplayHoverPause:true
 });
-$('#speakers').owlCarousel({
-	loop:true,
-	margin: 20,
-	autoplay:true,
-	autoplayTimeout:5000,
-	autoplayHoverPause:true,
-	responsive:{
-        0:{items:1},
-        900:{items:2}
-    }
-})
-
+	$("#aboutIconsContainer").owlCarousel({
+		center: true,
+		loop:true,
+		items:1,
+		autoplay:true,
+		autoplayTimeout:2000,
+		smartSpeed: 100
+	});	
 $('#eventsListContainer').perfectScrollbar();
 $('#eventsDescriptionContainer').perfectScrollbar();
-$('#speakers').perfectScrollbar();
+$('.card.horizontal .card-stacked .card-content').perfectScrollbar();
+$('.abouticons').perfectScrollbar();

@@ -5,13 +5,13 @@ var FAQ = [];
 var events = [];
 var speakersList = [];
 var FAQListContainer = $("#FAQListContainer");
-var eventsListContainer = $("#eventsList");
-var eventLocationContainer = $("#eventLocation");
+var eventsListDay1Container = $("#eventsListDay1");
+var eventsListDay2Container = $("#eventsListDay2");
 var timeContainer = $("#time");
 var dateContainer = $("#date");
 var descriptionContainer = $("#description");
 var speakerContainer = $("#speaker");
-var ctaContainer = $("#cta");
+var locationContainer = $("#location");
 var speakerListContainer = $("#speakers");
 /**************************
 * FAQ Section
@@ -44,15 +44,20 @@ FAQListContainer.append(html);
 		description: Enter Event Description
 **************************/
 events[0] = {title:"Sample Title 1", description:"This is Sample Content! I Should be studing currently! I'll definatly start from tommorrow! Sample!Sample!Sample! Sample!Sample!Sample!  Sample!Sample!Sample! Sample!Sample!Sample! Sample!Sample!Sample!", eventLocation:"This Location", date:"C", time:"D", speaker:"Full Name", cta:"https://goo.gl/maps/g7jWu5ehByH2"};
-events[1] = {title:"Sample Title 2", description:"A", eventLocation:"B", date:"C", time:"D", speaker:"E", cta:"F"};
-events[2] = {title:"Sample Title 3", description:"A", eventLocation:"B", date:"C", time:"D", speaker:"E", cta:"F"};
-events[3] = {title:"Sample Title 4", description:"A", eventLocation:"B", date:"C", time:"D", speaker:"E", cta:"F"};
-events[4] = {title:"Sample Title 5", description:"A", eventLocation:"B", date:"C", time:"D", speaker:"E", cta:"F"};
-events[5] = {title:"Sample Title 6", description:"A", eventLocation:"B", date:"C", time:"D", speaker:"E", cta:"F"};
-events[6] = {title:"Sample Title 7", description:"A", eventLocation:"B", date:"C", time:"D", speaker:"E", cta:"F"};
+events[1] = {title:"Sample Title 2", description:"A", eventLocation:"B", date:"C", time:"D", speaker:"E", day:"1"};
+events[2] = {title:"Sample Title 3", description:"A", eventLocation:"B", date:"C", time:"D", speaker:"E", day:"1"};
+events[3] = {title:"Sample Title 4", description:"A", eventLocation:"B", date:"C", time:"D", speaker:"E", day:"1"};
+events[4] = {title:"Sample Title 5", description:"A", eventLocation:"B", date:"C", time:"D", speaker:"E", day:"2"};
+events[5] = {title:"Sample Title 6", description:"A", eventLocation:"B", date:"C", time:"D", speaker:"E", day:"2"};
+events[6] = {title:"Sample Title 7", description:"A", eventLocation:"B", date:"C", time:"D", speaker:"E", day:"2"};
 for (var x in events){
-	var html = '<li class="collection-item itemNumber'+x+'" onclick="displayEventInformation('+x+')"><div class="eventsList"><i class="fa fa-angle-double-right" aria-hidden="true"></i>&nbsp;'+  events[x].title+'</div></li>';
-	eventsListContainer.append(html);
+	if(events[x].day == 1)
+	{var html1 = '<li class="collection-item itemNumber'+x+'" onclick="displayEventInformation('+x+')"><div class="eventsList"><i class="fa fa-angle-double-right" aria-hidden="true"></i>&nbsp;'+  events[x].title+'</div></li>';
+	eventsListDay1Container.append(html1);
+	} else {
+	var html2 = '<li class="collection-item itemNumber'+x+'" onclick="displayEventInformation('+x+')"><div class="eventsList"><i class="fa fa-angle-double-right" aria-hidden="true"></i>&nbsp;'+  events[x].title+'</div></li>';
+	eventsListDay2Container.append(html2);
+	}
 }
 displayEventInformation(0);
 var prevItem;
@@ -66,9 +71,7 @@ function displayEventInformation(x){
 	var html = 'Speaker: '+events[x].speaker; 
 	speakerContainer.text(html);
 	var html = 'Location: '+ events[x].eventLocation;
-	eventLocationContainer.text(html);
-	ctaContainer.attr("href",events[x].cta);
-	ctaContainer.text(html);
+	locationContainer.text(html);
 	$(prevItem).removeClass("active");
 	prevItem = ".itemNumber"+x;
 	$(prevItem).addClass("active");
@@ -90,6 +93,6 @@ function displayEventInformation(x){
 	speakersList[3] = {name:"Sample", details:"Sample", cta:"sample", ctaText:"sample", speakerImage: "http://www.shunvmall.com/data/out/193/47864981-random-image.gif"};
 	speakersList[4] = {name:"Sample", details:"Sample", cta:"sample", ctaText:"sample", speakerImage: "http://lorempixel.com/100/190/nature/6"};
 for (var x in speakersList){
-	var html = '<div class="card hoverable horizontal"><div class="card-image"><img src="'+speakersList[x].speakerImage+'"><span class="card-title">'+speakersList[x].name+'</span></div><div class="card-stacked"><div class="card-content"><p>'+speakersList[x].details+'</p></div><div class="card-action"><a href="'+speakersList[x].cta+'">'+speakersList[x].ctaText+'</a></div></div>';
+	var html = '<div class="col-xs-12 col-md-6 col-lg-4"><div class="card hoverable horizontal"><div class="card-image"><img src="'+speakersList[x].speakerImage+'"><span class="card-title">'+speakersList[x].name+'</span></div><div class="card-stacked"><div class="card-content"><p>'+speakersList[x].details+'</p></div><div class="card-action"><a href="'+speakersList[x].cta+'">'+speakersList[x].ctaText+'</a></div></div></div>';
 	speakerListContainer.append(html);
 }
