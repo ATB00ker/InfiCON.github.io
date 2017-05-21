@@ -162,3 +162,15 @@ footer{
 	font-size: 24px;
 	margin-left:5px;
 }
+.card.horizontal{ height: 230px; }
+.card.horizontal .card-image img{
+	width: 230px;
+	height: 230px;
+}
+.card.horizontal .card-stacked .card-content{
+	max-height: 230px;
+	overflow: auto;
+}
+#speakers{
+	padding: 20px;
+}

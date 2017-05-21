@@ -3,6 +3,7 @@
 **************************/
 var FAQ = [];
 var events = [];
+var speakersList = [];
 var FAQListContainer = $("#FAQListContainer");
 var eventsListContainer = $("#eventsList");
 var eventLocationContainer = $("#eventLocation");
@@ -11,7 +12,7 @@ var dateContainer = $("#date");
 var descriptionContainer = $("#description");
 var speakerContainer = $("#speaker");
 var ctaContainer = $("#cta");
-var boxInRow;
+var speakerListContainer = $("#speakers");
 /**************************
 * FAQ Section
 ***************************
@@ -71,4 +72,24 @@ function displayEventInformation(x){
 	$(prevItem).removeClass("active");
 	prevItem = ".itemNumber"+x;
 	$(prevItem).addClass("active");
+}
+/**************************
+* Speakers Section
+***************************
+*Append Format: 
+	speakersList[X] = {name:"", details:"", cta:"", ctaText:"", speakerImage:""};
+		name: Speaker's Name
+		details: Speaker's Details 
+		cta: Link to event or wherever speaker wishes to redirect users on click.
+		ctaText: Text that appears for cta on site.
+		speakerImage: Photo of the speaker
+**************************/
+	speakersList[0] = {name:"Sample", details:"SampleSample SampleSample SampleSample SampleSample SampleSample SampleSample SampleSample SampleSample SampleSample SampleSample SampleSample SampleSample SampleSample Sample", cta:"sample", ctaText:"sample", speakerImage: "http://lorempixel.com/100/190/nature/6"};
+	speakersList[1] = {name:"Sample", details:"Sample", cta:"sample", ctaText:"sample", speakerImage: "http://www.shunvmall.com/data/out/193/47864981-random-image.gif"};
+	speakersList[2] = {name:"Sample", details:"Sample", cta:"sample", ctaText:"sample", speakerImage: "http://lorempixel.com/100/190/nature/6"};
+	speakersList[3] = {name:"Sample", details:"Sample", cta:"sample", ctaText:"sample", speakerImage: "http://www.shunvmall.com/data/out/193/47864981-random-image.gif"};
+	speakersList[4] = {name:"Sample", details:"Sample", cta:"sample", ctaText:"sample", speakerImage: "http://lorempixel.com/100/190/nature/6"};
+for (var x in speakersList){
+	var html = '<div class="card hoverable horizontal"><div class="card-image"><img src="'+speakersList[x].speakerImage+'"><span class="card-title">'+speakersList[x].name+'</span></div><div class="card-stacked"><div class="card-content"><p>'+speakersList[x].details+'</p></div><div class="card-action"><a href="'+speakersList[x].cta+'">'+speakersList[x].ctaText+'</a></div></div>';
+	speakerListContainer.append(html);
 }
