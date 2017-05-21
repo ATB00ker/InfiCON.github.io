@@ -28,5 +28,6 @@ $("#FAQListContainer").owlCarousel({
 	});	
 $('#eventsListContainer').perfectScrollbar();
 $('#eventsDescriptionContainer').perfectScrollbar();
-$('.card.horizontal .card-stacked .card-content').perfectScrollbar();
+$('.card-content').perfectScrollbar();
+$('.speakerDetails p').perfectScrollbar();
 $('.abouticons').perfectScrollbar();

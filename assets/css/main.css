@@ -38,6 +38,11 @@ a:link{
 	max-height: 230px;
 	overflow: auto;
 }
+.col-centered{
+	display:inline-block;
+	float:none;
+	text-align:center;	
+}
 /**************************
 * Logo
 **************************/
@@ -104,6 +109,50 @@ a:link{
 **************************/
 #speakersContainer .section-header{
 	color: #ff7e5b;
+}
+.speakerBox{
+	height: 255px;
+	width: 255px;
+	overflow: hidden;
+}
+.speakerImage{
+	position: relative;
+	height: 255px;
+	width: 255px;
+}
+.speakerImage img{
+	height: 255px;
+	width: 255px;
+}
+.speakerDetails{
+	position: absolute;
+	bottom: -255px;
+	left: 0;
+	height: 255px;
+	width: 255px;
+	background-color: rgba(0, 0, 0, 0.3);
+	color: #fff;
+	padding: 15px;
+	font-size: 24px;
+}
+.speakerDetails p{
+	position: relative;
+	border-top: 2px solid;
+	font-size: 18px;
+	overflow: auto;
+	max-height: 230px;
+}
+.speakerBox:hover{
+	transform: scale(1.1);
+}
+.speakerBox:hover .speakerDetails{
+	animation-name: slide-up;
+	animation-duration: 0.3s;
+	bottom: 0;
+}
+@keyframes slide-up{
+    from {bottom: -255px;}
+    to {bottom: 0;}	
 }
 /**************************
 * Events Section
