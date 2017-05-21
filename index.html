@@ -16,8 +16,8 @@
     <title>InfiCON</title>
 
     <!-- Site favicon -->
-    <link href="./assets/images/tempLogo.PNG" rel="shortcut icon">
-    <link href="./assets/images/tempLogo.PNG" rel="apple-touch-icon">
+    <link href="./assets/images/navLogo.jpg" rel="shortcut icon">
+    <link href="./assets/images/navLogo.jpg" rel="apple-touch-icon">
 
     <!-- Bootstrap Core CSS -->
     <link href="assets/css/bootstrap.min.css" rel="stylesheet">
@@ -38,10 +38,33 @@
 	<link href="assets/css/main.css" rel="stylesheet" />
 </head>
 <body>
+<!-- Header Section -->
+  <header id="masthead" class="masthead navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" style="margin-top:21px" data-toggle="collapse" data-target="#main-menu">
+          <i class="fa fa-bars"></i>
+        </button>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <nav id="main-menu" class="collapse navbar-collapse">
+        <ul class="nav navbar-nav">
+          <li><a class="page-scroll" href="#about">About</a></li>
+          <li><a class="page-scroll" href="#speakersContainer">Speakers</a></li>
+          <li><a class="page-scroll" href="#eventsContainer">Events</a></li>
+          <li><a class="page-scroll" href="#sponsors">Sponsors</a></li>
+          <li><a class="page-scroll" href="#FAQListContainer">FAQ</a></li>
+        </ul>
+      </nav><!-- /.navbar-collapse -->
+    </div><!-- /.container -->
+  </header><!-- /#masthead -->
+<!-- Header Section -->
 <section>
 	<div class="container-fluid" id="particles-js">
 		<div id="logo">
-			<img src="./assets/images/tempLogo.PNG">
+			<img src="./assets/images/navLogo.jpg">
 			<i onclick="scrollToFAQ();" class="fa fa-angle-double-down" aria-hidden="true"></i>
 		</div>
 	</div>
@@ -49,76 +72,77 @@
 <section>
 	<div class="container">
 		<div id="about">
-			<div class="card row">
+			<div class="row card">
 				<h4 class="section-header">About the Event</h4>
-				<div class="col-xs-12">
-					<div class="valign-wrapper card horizontal">
-					  <div id="aboutIconsContainer" class="owl-carousel card-image">
-						<div class="abouticons">
-						<i class="fa fa-map-marker" aria-hidden="true"></i>
-						Location<p>New World Stages 340 W 50th St, New York, NY 10019, USA</p>
+				<div id="aboutContentContainer" class="col-xs-12">
+					<div class="col-xs-12 col-md-5">
+						<div id="aboutIconsContainer" class=" valign-wrapper owl-carousel">
+							<div class="abouticons">
+							<i class="fa fa-map-marker" aria-hidden="true"></i>
+							Location<p>New World Stages 340 W 50th St, New York, NY 10019, USA</p>
+							</div>
+							<div class="abouticons">
+							<i class="fa fa-microphone" aria-hidden="true"></i>
+							Speaker<p>12 Speakers, Experts who are willing to share their knowledge</p>
+							</div>
+							<div class="abouticons">
+							<i class="fa fa-calendar-o" aria-hidden="true"></i>
+							Date<p>August 25th - 27th, 2017</p>
+							</div>
+							<div class="abouticons">
+							<i class="fa fa-clock-o" aria-hidden="true"></i>
+							Time<p>8.15 AM - 5.30 AM</p>
+							</div>
 						</div>
-						<div class="abouticons">
-						<i class="fa fa-microphone" aria-hidden="true"></i>
-						Speaker<p>12 Speakers, Experts who are willing to share their knowledge</p>
-						</div>
-						<div class="abouticons">
-						<i class="fa fa-calendar-o" aria-hidden="true"></i>
-						Date<p>August 25th - 27th, 2017</p>
-						</div>
-						<div class="abouticons">
-						<i class="fa fa-clock-o" aria-hidden="true"></i>
-						Time<p>8.15 AM - 5.30 AM</p>
-						</div>
-					  </div>
-					  <div id="summary" class="card-stacked">
-						<div class="card-content blue-grey lighten-5">
-						  <p>I am a very simple card. I am good at containing small bits of information to define and attract attention by telling the kind of people who'll enjoy the event and a summary of what they'll find in the event</p>
-						</div>
-					  </div>
 					</div>
-				 <div class="card-action">
-					<a href="https://goo.gl/maps/6hFQeB3P9jv" target="_blank">Location on Google Maps</a>
-				</div>
+					<div class="col-xs-12 col-md-7">
+						<div id="summary">
+							<p>I am a very simple card. I am good at containing small bits of information to define and attract attention by telling the kind of people who'll enjoy the event and a summary of what they'll find in the event. I am a very simple card. :)</p>
+							<div class="card-action">
+								<a href="https://goo.gl/maps/6hFQeB3P9jv" target="_blank">Location on Google Maps</a>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
+	</div>
+	<div id="venue">
+		<img src="./assets/images/venue.jpg">
+		<div class="col-sm-2"></div>
+		<div id="aboutVenueContainer" class="valign-wrapper col-lg-3 col-md-5 col-sm-6 col-xs-11">
+			<div id="aboutVenue">        
+				<div class="card-panel">
+					<p>Venue</p>
+					<span>I am a very simple card. I am good at containing small bits of information.
+					I am convenient because I require little markup to use effectively. I am similar to what is called a panel in other frameworks.
+					</span>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="container">
 		<div id="speakersContainer" class="card row">
 			<h4 class="section-header">Event Speakers</h4>
 			<div id="speakers" class="col-centered"></div>
 		</div>
 		<div class="card row">
 			<div id="eventsContainer">
-				<h4 class="section-header">Upcoming Events</h4>
-				<div class="col-sm-4" id="eventsListContainer">
-					<ul class="collapsible" data-collapsible="accordion">
-					  <li>
-						<div class="collapsible-header"><span class="new badge light-blue" data-badge-caption="Events">3</span><i class="material-icons"></i>Day 1</div>
-						<div class="collapsible-body"><ul class="collection" id="eventsListDay1"></ul></div>
-					  </li>
-					  <li>
-						<div class="collapsible-header"><span class="new badge light-blue" data-badge-caption="Events">4</span><i class="material-icons"></i>Day 2</div>
-						<div class="collapsible-body"><ul class="collection" id="eventsListDay2"></ul></div>
-					  </li>
-					</ul>
+				<h4 class="section-header">Events Schedule</h4>
+				<div class="col-sm-12" id="eventsListContainer">
+					  <ul class="tabs tabs-fixed-width">
+						<li class="tab col s3"><a class="active" href="#eventsListDay1">DAY 1</a></li>
+						<li class="tab col s3"><a href="#eventsListDay2">DAY 2</a></li>
+					  </ul>     
+					<ul class="collapsible" data-collapsible="accordion" id="eventsListDay1"></ul>
+					<ul class="collapsible" data-collapsible="accordion" id="eventsListDay2"></ul>
 				</div>
-				<div class="col-sm-7" id="eventsDescriptionContainer">
-					<div class="col-xs-12">
-						<div id="description"></div>
-						<div class="col-xs-6">
-							<div id="speaker" class="commonDescriptionDesign"></div>
-						</div>
-						<div class="col-xs-6">
-							<div id="location" class="commonDescriptionDesign" ></div>
-						</div>
-						<div class="col-xs-6">
-							<div id="date" class="commonDescriptionDesign"></div>
-						</div>
-						<div class="col-xs-6">
-							<div id="time" class="commonDescriptionDesign"></div>
-						</div>
-					</div>
-				</div>
+			</div>
+		</div>
+		<div id="sponsorsContainer" class="card row">
+		<h4 class="section-header">Sponsors</h4>
+			<div class="col-centered col-xs-12">
+				<div id="sponsors" class="col-centered"></div>
 			</div>
 		</div>
 		<div class="card row">

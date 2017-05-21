@@ -1,14 +1,15 @@
 //** Set Container Height **//
 var height = $(window).height();
 $(".container-fluid").css("height",height);
+$("#venue").css("height",height);
 $("#logo img").css("marginTop",height/2);
 $("#logo img").css("transform","translateY(-50%)");
 $("#logo i").css("marginTop",height-0.15*height);
+$("#aboutVenueContainer").css("height",height);
 function scrollToFAQ(){
 	$('html, body').animate({
-	scrollTop: $(".container").offset().top}, 300);
+	scrollTop: $("#about").offset().top-100}, 300);
 }
-
 //** Owl Initiate **//
 $("#FAQListContainer").owlCarousel({
 	center: true,
@@ -24,8 +25,8 @@ $("#FAQListContainer").owlCarousel({
 		items:1,
 		autoplay:true,
 		autoplayTimeout:2000,
-		smartSpeed: 100
-	});	
+		smartSpeed: 200
+	});
 $('#eventsListContainer').perfectScrollbar();
 $('#eventsDescriptionContainer').perfectScrollbar();
 $('.card-content').perfectScrollbar();

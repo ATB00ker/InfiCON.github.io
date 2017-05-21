@@ -41,7 +41,58 @@ a:link{
 .col-centered{
 	display:inline-block;
 	float:none;
-	text-align:center;	
+	text-align:center;
+}
+.card{
+	padding-bottom: 5px;
+}
+.collapsible-body{
+	border-bottom: none;
+	padding: 0;
+	min-height: 150px;
+}
+/**************************
+* Header Styles 
+**************************/
+.masthead {
+    background: rgba(0, 0, 0, 0.2);
+    border: none;
+    border-radius: 0px;
+    box-shadow: none;
+    margin: 0px;
+    z-index: 99999;
+}
+.navbar-default .navbar-nav>.active>a,
+.navbar-default .navbar-nav>.open>a,
+.navbar-default .navbar-nav>.active>a:hover,
+.navbar-default .navbar-nav>.open>a:hover {
+    background: transparent;
+    box-shadow: none;
+    color: #ffffff;
+}
+.navbar-default .navbar-nav>.active>a,
+.navbar-default .navbar-nav>.active>a:focus,
+.navbar-default .navbar-nav>.active>a:hover {
+    background: transparent;
+}
+.navbar-nav>li>a {
+    box-shadow: none;
+    color: #ffffff !important;
+    font-size: 2em;
+    font-weight: 400;
+    padding: 37px 20px;
+}
+@media all and (max-width:767px){
+nav li{width: 100%;}
+}
+.bg-change {
+    background: #333131;
+}
+.bg-change {
+    padding-top: 8px;
+}
+.bg-change .navbar-nav>li>a {
+    padding: 37px 20px;
 }
 /**************************
 * Logo
@@ -51,6 +102,12 @@ a:link{
 	right: 0;
 	left: 0;
 	margin: auto;
+	width: 50%;
+}
+@media all and (max-width: 700px){
+	#logo img{
+	width: 70%;	
+	}
 }
 #logo i{
 	position: absolute;
@@ -74,15 +131,11 @@ a:link{
 #about .section-header{
 	color: teal;
 }
-#about .card-image{
+#aboutContentContainer{
+	max-height: none!important;
 	overflow: auto;
-	width : 40%;
-}
-@media all and (max-width: 500px){
-	#about .card-image{
-	overflow: auto;
-	width : 60%;
-	}
+	padding: 10px;
+	height: 100%;
 }
 .abouticons{
 	font-size: 24px;
@@ -91,6 +144,7 @@ a:link{
 	height: 100%;
 	max-height: 230px;
 	overflow: auto;
+	text-align: center;
 }
 .abouticons i{
 	color: teal;
@@ -102,7 +156,34 @@ a:link{
 }
 #summary{
 	height: 100%;
-	font-size: 20px;	
+	font-size: 20px;
+	padding: 0 10px 10px 10px;
+}
+#summary .card-action{
+	padding: 10px 0 0 0;
+}
+/**************************
+* Venue Section
+**************************/
+#venue{
+	position: relative;
+	overflow: hidden;
+}
+#venue img{
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+#aboutVenue{
+	position: absolute;
+	opacity: 0.8;
+}
+#aboutVenue p{
+	font-size: 25px;
+	border-bottom: 2px solid;
+}
+.card-panel{
+	font-size: 18px;
 }
 /**************************
 * Speakers Section
@@ -126,7 +207,7 @@ a:link{
 }
 .speakerDetails{
 	position: absolute;
-	bottom: -255px;
+	bottom: -200px;
 	left: 0;
 	height: 255px;
 	width: 255px;
@@ -151,7 +232,7 @@ a:link{
 	bottom: 0;
 }
 @keyframes slide-up{
-    from {bottom: -255px;}
+    from {bottom: -200px;}
     to {bottom: 0;}	
 }
 /**************************
@@ -160,30 +241,39 @@ a:link{
 #eventsContainer .section-header{
 	color: #4a90e2;
 }
-.eventsList{
-	left: 0px;
-	height: 20px;
-	font-size: 21px;
-}
-#eventsListContainer{
-	height: 250px;
-	overflow-y: auto;
-}
-#eventsDescriptionContainer{
-	height: 250px;
-	overflow-y: auto;
+.tabs .tab a{color: #4a90e2;}
+.tabs .tab a:hover, .tabs .tab a.active{color: #4281CB;}
+.tabs .indicator{background-color: #4281CB;}
+.eventsDescription{
+	font-size: 20px;
+	word-wrap: break-word;
+	padding: 20px;
 }
 .commonDescriptionDesign{
-	margin-top: 5px;
-	margin-left: 15px;
-	font-size: 20px;
+	font-size: 16px;
+	padding: 0 15px;
+	color:#212121;
+	padding-bottom: 5px;
 }
-#description{
-	margin-top: 5px;
-	margin-left: 15px;
-	font-size: 20px;
-	font-weight: 600px;
-	word-wrap: break-word;
+/**************************
+* Sponsors Section
+**************************/
+#sponsorsContainer .section-header{color:#66b772;}
+.sponsorsBox{
+	width: 225px;
+	height: 225px;
+}
+.sponsorsLogo{
+	width: 225px;
+	height: 225px;
+}
+.sponsorsLogo img{
+	width: 225px;
+	height: 225px;
+}
+.sponsorsName{
+	font-size: 18px;
+	padding: 5px;
 }
 /**************************
 * FAQ Section

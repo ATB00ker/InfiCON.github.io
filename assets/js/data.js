@@ -4,15 +4,12 @@
 var FAQ = [];
 var events = [];
 var speakersList = [];
+var sponsorsList = [];
 var FAQListContainer = $("#FAQListContainer");
 var eventsListDay1Container = $("#eventsListDay1");
 var eventsListDay2Container = $("#eventsListDay2");
-var timeContainer = $("#time");
-var dateContainer = $("#date");
-var descriptionContainer = $("#description");
-var speakerContainer = $("#speaker");
-var locationContainer = $("#location");
 var speakerListContainer = $("#speakers");
+var sponsorsListContainer = $("#sponsors");
 /**************************
 * FAQ Section
 ***************************
@@ -39,11 +36,14 @@ FAQListContainer.append(html);
 		details: Speaker's Details
 		speakerImage: Image of speaker
 **************************/
-	speakersList[0] = {name:"Sample", details:"Sample Sample Sample Sample Sample Sample Sample Sample Sample Sample Sample Sample Sample Sample Sample Sample Sample Sample Sample Sample Sample Sample Sample Sample Sample Sample SampleSample SampleSample SampleSample SampleSample SampleSample Sample", speakerImage: "http://lorempixel.com/100/190/nature/6"};
-	speakersList[1] = {name:"Sample", details:"Sample", speakerImage: "http://www.shunvmall.com/data/out/193/47864981-random-image.gif"};
-	speakersList[2] = {name:"Sample", details:"Sample", speakerImage: "http://lorempixel.com/100/190/nature/6"};
-	speakersList[3] = {name:"Sample", details:"Sample", speakerImage: "http://www.shunvmall.com/data/out/193/47864981-random-image.gif"};
-	speakersList[4] = {name:"Sample", details:"Sample", speakerImage: "http://lorempixel.com/100/190/nature/6"};
+	speakersList[0] = {name:"Sample", details:"Sample Sample Sample Sample Sample Sample Sample Sample Sample Sample Sample Sample Sample Sample Sample Sample Sample Sample Sample Sample Sample Sample Sample Sample Sample Sample SampleSample SampleSample SampleSample SampleSample SampleSample Sample", speakerImage: "./assets/images/speakers/sample.jpg"};
+	speakersList[1] = {name:"Sample", details:"Sample", speakerImage: "./assets/images/speakers/sample.jpg"};
+	speakersList[2] = {name:"Sample", details:"Sample", speakerImage: "./assets/images/speakers/sample.jpg"};
+	speakersList[3] = {name:"Sample", details:"Sample", speakerImage: "./assets/images/speakers/sample.jpg"};
+	speakersList[4] = {name:"Sample", details:"Sample", speakerImage: "./assets/images/speakers/sample.jpg"};
+	speakersList[5] = {name:"Sample", details:"Sample", speakerImage: "./assets/images/speakers/sample.jpg"};
+	speakersList[6] = {name:"Sample", details:"Sample", speakerImage: "./assets/images/speakers/sample.jpg"};
+	speakersList[7] = {name:"Sample", details:"Sample", speakerImage: "./assets/images/speakers/sample.jpg"};
 for (var x in speakersList){
 	var html = '<div class="col-centered col-xs-12 col-md-4 col-lg-3"><div class="col-centered speakerBox card hoverable"><div class="speakerImage"><img src="'+speakersList[x].speakerImage+'"><div class="speakerDetails">'+speakersList[x].name+'<p>'+speakersList[x].details+'</p></div></div></div></div>';
 	speakerListContainer.append(html);
@@ -61,7 +61,7 @@ for (var x in speakersList){
 		cta: Enter Event eventLocation google map link
 		description: Enter Event Description
 **************************/
-events[0] = {title:"Sample Title 1", description:"This is Sample Content! I Should be studing currently! I'll definatly start from tommorrow! Sample!Sample!Sample! Sample!Sample!Sample!  Sample!Sample!Sample! Sample!Sample!Sample! Sample!Sample!Sample!", eventLocation:"This Location", date:"C", time:"D", speaker:"Full Name", cta:"https://goo.gl/maps/g7jWu5ehByH2"};
+events[0] = {title:"Sample Title 1", description:"This is Sample Content! I Should be studing currently! I'll definatly start from tommorrow! Sample!Sample!Sampl! Sample!Sample!Sampl!  Sample!Sample!Sampl! Sample!Sample!Sampl! Sample!Sample!Sampl!", eventLocation:"This Location", date:"C", time:"D", speaker:"Full Name", cta:"https://goo.gl/maps/g7jWu5ehByH2", day:"1"};
 events[1] = {title:"Sample Title 2", description:"A", eventLocation:"B", date:"C", time:"D", speaker:"E", day:"1"};
 events[2] = {title:"Sample Title 3", description:"A", eventLocation:"B", date:"C", time:"D", speaker:"E", day:"1"};
 events[3] = {title:"Sample Title 4", description:"A", eventLocation:"B", date:"C", time:"D", speaker:"E", day:"1"};
@@ -70,27 +70,25 @@ events[5] = {title:"Sample Title 6", description:"A", eventLocation:"B", date:"C
 events[6] = {title:"Sample Title 7", description:"A", eventLocation:"B", date:"C", time:"D", speaker:"E", day:"2"};
 for (var x in events){
 	if(events[x].day == 1)
-	{var html1 = '<li class="collection-item itemNumber'+x+'" onclick="displayEventInformation('+x+')"><div class="eventsList"><i class="fa fa-angle-double-right" aria-hidden="true"></i>&nbsp;'+  events[x].title+'</div></li>';
+	{var html1 = '<li><div class="collapsible-header"><i class="fa fa-angle-double-right" aria-hidden="true"></i>'+events[x].title+'</div><div class="collapsible-body"><div><div class="col-xs-12 eventsDescription">'+events[x].description+'</div><div class="commonDescriptionDesign col-xs-6">'+events[x].speaker+'</div><div class="commonDescriptionDesign col-xs-6">'+events[x].eventLocation+'</div><div class="commonDescriptionDesign col-xs-6">'+events[x].date+'</div><div class="commonDescriptionDesign col-xs-6">'+events[x].time+'</div></div></div></li>';
 	eventsListDay1Container.append(html1);
 	} else {
-	var html2 = '<li class="collection-item itemNumber'+x+'" onclick="displayEventInformation('+x+')"><div class="eventsList"><i class="fa fa-angle-double-right" aria-hidden="true"></i>&nbsp;'+  events[x].title+'</div></li>';
+	var html2 = '<li><div class="collapsible-header"><i class="fa fa-angle-double-right" aria-hidden="true"></i>'+events[x].title+'</div><div class="collapsible-body"><div><div class="col-xs-12 eventsDescription">'+events[x].description+'</div><div class="commonDescriptionDesign col-xs-6">'+events[x].speaker+'</div><div class="commonDescriptionDesign col-xs-6">'+events[x].eventLocation+'</div><div class="commonDescriptionDesign col-xs-6">'+events[x].date+'</div><div class="commonDescriptionDesign col-xs-6">'+events[x].time+'</div></div></div></li>';
 	eventsListDay2Container.append(html2);
 	}
 }
-displayEventInformation(0);
-var prevItem;
-function displayEventInformation(x){
-	var html = events[x].description;
-	descriptionContainer.text(html);
-	var html = 'Time: '+ events[x].time;
-	timeContainer.text(html);
-	var html = 'Date: '+ events[x].date;
-	dateContainer.text(html);
-	var html = 'Speaker: '+events[x].speaker; 
-	speakerContainer.text(html);
-	var html = 'Location: '+ events[x].eventLocation;
-	locationContainer.text(html);
-	$(prevItem).removeClass("active");
-	prevItem = ".itemNumber"+x;
-	$(prevItem).addClass("active");
+/**************************
+* Events Section
+***************************
+*Append Format: 
+	sponsorsList[X] = {name:"", logo:""};
+		name: Sponsor Name
+		logo: Sponsor Logo
+**************************/
+sponsorsList[0] = {name:"Amity", logo:"./assets/images/sponsors/amity.png"};
+sponsorsList[1] = {name:"Amity", logo:"./assets/images/sponsors/amity.png"};
+sponsorsList[2] = {name:"Amity", logo:"./assets/images/sponsors/amity.png"};
+for (var x in sponsorsList){
+	var html = '<div class="col-centered col-xs-12 col-md-4"><div class="col-centered sponsorsBox"><div class="sponsorsLogo"><img src="'+sponsorsList[x].logo+'"></div><div class="sponsorsName">'+speakersList[x].name+'</div></div></div>';
+	sponsorsListContainer.append(html);
 }
